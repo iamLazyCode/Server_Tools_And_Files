@@ -1,0 +1,240 @@
+Windows Registry Editor Version 5.00
+
+; =====================================================
+; Allow scripts in CMD
+; =====================================================
+
+
+; POWERSHELL
+; Allow scripts in CMD set-executionpolicy remotesigned
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]
+"Path"="C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+"ExecutionPolicy"="RemoteSigned"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell]
+"Path"="C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe"
+"ExecutionPolicy"="RemoteSigned"
+
+; =====================================================
+; Disable Snap Layouts On Hover
+; =====================================================
+
+
+; Disable Snap Layouts On Hover
+; Created by Ryan Maskell
+; Article: https://winbuzzer.com/2021/12/06/windows-11-disable-the-snap-layouts-pop-up-on-the-maximize-button-xcxwbt/
+
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"EnableSnapAssistFlyout"=dword:00000000
+
+; =====================================================
+; Enable Linked Connections
+; =====================================================
+
+
+; Enable Linked Connections
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System]
+"EnableLinkedConnections"=dword:00000001
+
+; =====================================================
+; Enable Samba Warning Error Fix
+; =====================================================
+
+
+; Enable Samba Warning Error Fix
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Ranges\Range1]
+"*"=dword:00000001
+":Range"="192.168.50.*"
+
+; =====================================================
+; New_Text_Document
+; =====================================================
+
+
+; Created by: Shawn Brink
+; Created on: September 28th 2015
+; Updated on: August 28th 2019
+; Tutorial: https://www.tenforums.com/tutorials/24412-add-remove-default-new-context-menu-items-windows-10-a.html
+
+
+; New Text Document
+[-HKEY_CLASSES_ROOT\.txt\ShellNew]
+[HKEY_CLASSES_ROOT\.txt\ShellNew]
+"ItemName"=hex(2):40,00,25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,\
+  6f,00,74,00,25,00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,\
+  00,6e,00,6f,00,74,00,65,00,70,00,61,00,64,00,2e,00,65,00,78,00,65,00,2c,00,\
+  2d,00,34,00,37,00,30,00,00,00
+"NullFile"=""
+
+
+[-HKEY_CLASSES_ROOT\.txt]
+
+[HKEY_CLASSES_ROOT\.txt]
+@="txtfile"
+"Content Type"="text/plain"
+"PerceivedType"="text"
+
+[HKEY_CLASSES_ROOT\.txt\PersistentHandler]
+@="{5e941d80-bf96-11cd-b579-08002b30bfeb}"
+
+[HKEY_CLASSES_ROOT\.txt\ShellNew]
+"ItemName"=hex(2):40,00,25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,\
+  6f,00,74,00,25,00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,\
+  00,6e,00,6f,00,74,00,65,00,70,00,61,00,64,00,2e,00,65,00,78,00,65,00,2c,00,\
+  2d,00,34,00,37,00,30,00,00,00
+"NullFile"=""
+
+[-HKEY_CLASSES_ROOT\SystemFileAssociations\.txt]
+
+[HKEY_CLASSES_ROOT\SystemFileAssociations\.txt]
+"PerceivedType"="document"
+
+[-HKEY_CLASSES_ROOT\txtfile]
+
+[HKEY_CLASSES_ROOT\txtfile]
+@="Text Document"
+"EditFlags"=dword:00210000
+"FriendlyTypeName"=hex(2):40,00,25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,\
+  00,6f,00,6f,00,74,00,25,00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,\
+  32,00,5c,00,6e,00,6f,00,74,00,65,00,70,00,61,00,64,00,2e,00,65,00,78,00,65,\
+  00,2c,00,2d,00,34,00,36,00,39,00,00,00
+
+[HKEY_CLASSES_ROOT\txtfile\DefaultIcon]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,69,00,6d,00,\
+  61,00,67,00,65,00,72,00,65,00,73,00,2e,00,64,00,6c,00,6c,00,2c,00,2d,00,31,\
+  00,30,00,32,00,00,00
+
+[HKEY_CLASSES_ROOT\txtfile\shell\open\command]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,4e,00,4f,00,\
+  54,00,45,00,50,00,41,00,44,00,2e,00,45,00,58,00,45,00,20,00,25,00,31,00,00,\
+  00
+
+[HKEY_CLASSES_ROOT\txtfile\shell\print\command]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,4e,00,4f,00,\
+  54,00,45,00,50,00,41,00,44,00,2e,00,45,00,58,00,45,00,20,00,2f,00,70,00,20,\
+  00,25,00,31,00,00,00
+
+[HKEY_CLASSES_ROOT\txtfile\shell\printto\command]
+@=hex(2):25,00,53,00,79,00,73,00,74,00,65,00,6d,00,52,00,6f,00,6f,00,74,00,25,\
+  00,5c,00,73,00,79,00,73,00,74,00,65,00,6d,00,33,00,32,00,5c,00,6e,00,6f,00,\
+  74,00,65,00,70,00,61,00,64,00,2e,00,65,00,78,00,65,00,20,00,2f,00,70,00,74,\
+  00,20,00,22,00,25,00,31,00,22,00,20,00,22,00,25,00,32,00,22,00,20,00,22,00,\
+  25,00,33,00,22,00,20,00,22,00,25,00,34,00,22,00,00,00
+
+[-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.txt]
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.txt\OpenWithList]
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.txt\OpenWithProgids]
+"txtfile"=hex(0):
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.txt\UserChoice]
+"Hash"="hyXk/CpboWw="
+"ProgId"="txtfile"
+
+[-HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\Roaming\OpenWith\FileExts\.txt]
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\Roaming\OpenWith\FileExts\.txt\UserChoice]
+"Hash"="FvJcqeZpmOE="
+"ProgId"="txtfile"
+
+; How to Add New Windows Batch File to the Windows 10 Context Menu
+[HKEY_CLASSES_ROOT\.bat\ShellNew]
+"NullFile"=""
+
+; To Enable Developer Mode By Default
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\Appx]
+"AllowDevelopmentWithoutDevLicense"=dword:00000001
+
+; Disable menu show delay
+; [HKEY_CURRENT_USER\Control Panel\Desktop]
+; "MenuShowDelay"="0"
+
+; Show Drive Letter First
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer]
+"ShowDriveLettersFirst"=dword:00000004
+
+; How to Show More Details in File Explorer Transfer Dialog
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\OperationStatusManager]
+"EnthusiastMode"=dword:00000001
+
+; How to Add 'Empty Recycle Bin Context Menu' in Windows 10 & 11 
+[HKEY_CLASSES_ROOT\Directory\Background\shell\empty]
+"CommandStateHandler"="{c9298eef-69dd-4cdd-b153-bdbc38486781}"
+"Description"="@shell32.dll,-31332"
+"Icon"="shell32.dll,-254"
+"MUIVerb"="@shell32.dll,-10564"
+"Position"="Bottom"
+[HKEY_CLASSES_ROOT\Directory\Background\shell\empty\command]
+"DelegateExecute"="{48527bb3-e8de-450b-8910-8c4099cb8624}"
+
+; Disable Tooltip Off Mouse Hover
+; https://www.elevenforum.com/t/disable-tooltip-popups.10660/
+[HKEY_CURRENT_USER\Control Panel\Mouse]
+"MouseHoverTime"="6000"
+
+; Disable Drive Automatic Encryption
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\BitLocker]
+"PreventDeviceEncryption"=dword:00000001
+
+; Adding LocalSend in Right Click for Uniget
+
+[HKEY_CLASSES_ROOT\*\shell\SendToLocalSend]
+"MUIVerb"="Send to LocalSend"
+"Icon"="C:\\Users\\LazyCode\\AppData\\Local\\Programs\\LocalSend\\localsend_app.exe,0"
+
+[HKEY_CLASSES_ROOT\*\shell\SendToLocalSend\command]
+@="\"C:\\Users\\LazyCode\\AppData\\Local\\Programs\\LocalSend\\localsend_app.exe\" \"%1\""
+
+; Show BSOD details instead of sad smiley
+[HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\CrashControl]
+"DisplayParameters"=dword:00000001
+"DisableEmoticon"=dword:00000001
+
+; =====================================================
+; Remove 'Scan with Windows Defender' from the Context Menu
+; =====================================================
+
+
+; Remove 'Scan with Windows Defender' from the Context Menu
+; Created by: Shawn Brink
+; Created on: August 21st 2015
+; Updated on: July 6, 2020
+; Tutorial: https://www.tenforums.com/tutorials/18145-add-remove-scan-microsoft-defender-context-menu-windows-10-a.html
+
+[-HKEY_CLASSES_ROOT\*\shellex\ContextMenuHandlers\EPP]
+
+[-HKEY_CLASSES_ROOT\CLSID\{09A47860-11B0-4DA5-AFA5-26D86198A780}]
+
+[-HKEY_CLASSES_ROOT\Directory\shellex\ContextMenuHandlers\EPP]
+
+[-HKEY_CLASSES_ROOT\Drive\shellex\ContextMenuHandlers\EPP]
+
+
+; =====================================================
+; Remove_'Open in Terminal'_from_Context_Menu
+; =====================================================
+
+
+; Remove 'Open in Terminal' from Context Menu
+; Created by: Sergey Tkachenko
+; Tutorial: https://winaero.com/how-to-remove-open-in-windows-terminal-context-menu-in-windows-11/
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Blocked]
+"{9F156763-7844-4DC4-B2B1-901F640F5155}"=""
+
+; =====================================================
+; Set Pin Lenth to 4 Characters
+; =====================================================
+
+
+; Set Pin Lenth to 4 Characters
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\PassportForWork\PINComplexity]
+"MinimumPINLength"=dword:00000004
+
+; Enable Compact View
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Advanced]
+"UseCompactMode"=dword:00000001
